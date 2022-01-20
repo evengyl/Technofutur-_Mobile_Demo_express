@@ -1,25 +1,28 @@
 [
     {
-        "Name" : "Brian",
-        "LastName" : "Van Bellinghen",
+        "id" : 1,
+        "name" : "Brian",
+        "lastName" : "Van Bellinghen",
         "age" : 24,
-        "tecgFav" : [
+        "techFav" : [
             "C#", "Angular", "Tutu"
         ]
     },
     {
-        "Name" : "Francesco",
-        "LastName" : "Sallusti",
+        "id" : 2,
+        "name" : "Francesco",
+        "lastName" : "Sallusti",
         "age" : 26,
-        "tecgFav" : [
+        "techFav" : [
             "C#", "Angular", "Tutu"
         ]
     },
     {
-        "Name" : "Thomas",
-        "LastName" : "Vieceli",
+        "id" : 3,
+        "name" : "Thomas",
+        "lastName" : "Vieceli",
         "age" : 30,
-        "tecgFav" : [
+        "techFav" : [
             "C#", "Angular", "Tutu"
         ]
     }
