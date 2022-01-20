@@ -20,8 +20,8 @@ Users
     localhost:3000/api/users/option?name=loic   --> get one user by name
     localhost:3000/api/users/option?login=evengyl   --> get one user by login
 
-    localhost:3000/api/users/name/:loic         --> get one user by name
-    localhost:3000/api/users/login/:evengyl     --> get one user by login
+    localhost:3000/api/users/name/:name         --> get one user by name
+    localhost:3000/api/users/login/:login     --> get one user by login
 */
 
 /*
@@ -36,6 +36,8 @@ Liste des statuts http important
     504 : le serveur n'a pas répondu.
 */
 
+
+//localhost:3000/                  --> page d'accueil
 app.get("/", (req, res) => {
     res.send(`
         <a href="/api/users">Get all de tous les users : localhost:3000/api/users</a>
@@ -44,6 +46,7 @@ app.get("/", (req, res) => {
 })
 
 
+//localhost:3000/api/users/       --> get all users
 app.get("/api/users/", (req, res) => {
 
     //res.download("./db.json")
@@ -61,6 +64,9 @@ app.get("/api/users/", (req, res) => {
 
 })
 
+
+
+//localhost:3000/api/users/:id     --> get one user
 app.get("/api/users/:id", (req, res, next) => {
 
     
@@ -82,6 +88,70 @@ app.get("/api/users/:id", (req, res, next) => {
 })
 
 
+
+//localhost:3000/api/users/option?name=loic   --> get one user by name
+//localhost:3000/api/users/option?login=evengyl   --> get one user by login
+app.get("/api/users/option", (req, res, next) => {
+
+    console.log(req.query)
+    if(req.query.name && !req.query.login)
+    {
+        let user = dbUsers.filter(user => user.name == req.query.name)
+
+        if(user.length == 0)
+            next()
+        else
+            res.json(user[0])
+    }
+    else if(req.query.login && !req.query.name)
+    {
+        let user = dbUsers.filter(user => user.login == req.query.login)
+
+        if(user.length == 0)
+            next()
+        else
+            res.json(user[0])
+    }
+    else
+    {
+        next()
+    }
+    res.end()
+   
+})
+
+
+//localhost:3000/api/users/name/:name         --> get one user by name
+//localhost:3000/api/users/login/:login     --> get one user by login
+app.get(["/api/users/name/:name", "/api/users/login/:login"], (req, res, next) => {
+    console.log(req.params)
+
+    if(req.params.name != undefined)
+    {
+        let user = dbUsers.filter(user => user.name == req.params.name)
+
+        if(user.length == 0)
+            next()
+        else
+            res.json(user[0])
+    }
+    else if(req.params.login != undefined)
+    {
+        let user = dbUsers.filter(user => user.login == req.params.login)
+
+        if(user.length == 0)
+            next()
+        else
+            res.json(user[0])
+    }
+    else {
+        next()
+    }
+
+})
+
+
+//localhost:3000/api/users/       --> post one user
 app.post("/api/users", (req, res, next) => {
    
     if(req.body.name && req.body.lastName && req.body.age && req.body.techFav)
@@ -100,6 +170,8 @@ app.post("/api/users", (req, res, next) => {
 })
 
 
+
+//localhost:3000/api/users/:id     --> put / patch one user
 app.put("/api/users/:id", (req, res, next) => {
     
 
@@ -136,6 +208,8 @@ app.put("/api/users/:id", (req, res, next) => {
 })
 
 
+
+//localhost:3000/api/users/:id     --> delete one user
 app.delete("/api/users/:id", (req, res, next) => {
     if(parseInt(req.params.id), 10)
     {

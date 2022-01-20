@@ -3,6 +3,7 @@
         "id" : 1,
         "name" : "Brian",
         "lastName" : "Van Bellinghen",
+        "login" : "b_nair",
         "age" : 24,
         "techFav" : [
             "C#", "Angular", "Tutu"
@@ -12,6 +13,7 @@
         "id" : 2,
         "name" : "Francesco",
         "lastName" : "Sallusti",
+        "login" : "saluman",
         "age" : 26,
         "techFav" : [
             "C#", "Angular", "Tutu"
@@ -21,6 +23,7 @@
         "id" : 3,
         "name" : "Thomas",
         "lastName" : "Vieceli",
+        "login" : "tom",
         "age" : 30,
         "techFav" : [
             "C#", "Angular", "Tutu"
