@@ -1,0 +1,15 @@
+{
+  "name": "technotic_mobile",
+  "version": "1.0.0-alpha",
+  "description": "Demo Mobile",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Loic baudoux",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
