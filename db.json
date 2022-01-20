@@ -1,0 +1,26 @@
+[
+    {
+        "Name" : "Brian",
+        "LastName" : "Van Bellinghen",
+        "age" : 24,
+        "tecgFav" : [
+            "C#", "Angular", "Tutu"
+        ]
+    },
+    {
+        "Name" : "Francesco",
+        "LastName" : "Sallusti",
+        "age" : 26,
+        "tecgFav" : [
+            "C#", "Angular", "Tutu"
+        ]
+    },
+    {
+        "Name" : "Thomas",
+        "LastName" : "Vieceli",
+        "age" : 30,
+        "tecgFav" : [
+            "C#", "Angular", "Tutu"
+        ]
+    }
+]
